@@ -1,0 +1,155 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebServiceProxy xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webserviceproxy">
+   <list n="CHILD_NODES">
+      <url path="SmsBalanceadoService.xml"/>
+      <url path="SmsBalanceadoService.wsdl"/>
+      <url path="smsBalanceado_SCHEMA_2FPORTAL_2FSMS_2FXMLSchema_1180819779.xsd"/>
+      <url path="../types/EnviaSmsRespTO.java"/>
+      <url path="../types/RecargaBalanceoSMSResponse.java"/>
+      <url path="../types/ObjectFactory.java"/>
+      <url path="../types/EnviaSmsTO.java"/>
+      <url path="SmsBalanceado.java"/>
+      <url path="SmsBalanceadoService.java"/>
+      <url path="../types/EnviarSMS.java"/>
+      <url path="../types/package-info.java"/>
+      <url path="../types/RecargaBalanceoSMS.java"/>
+      <url path="../types/OperadoresCursorRespTO.java"/>
+      <url path="SmsBalanceadoPortClient.java"/>
+      <url path="../types/RecargaBalanceoRespTO.java"/>
+      <url path="../types/EstadoResp.java"/>
+      <url path="../types/RecargaBalanceoTO.java"/>
+      <url path="../types/EnviarSMSResponse.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MIME"/>
+      <list n="LOCAL_FILES"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy"/>
+      <url n="ORACLE_WEBSERVICES_XML" path="SmsBalanceadoService.xml"/>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="cl.ares.bice.ws.enviosms.ws.proxy"/>
+            <value n="WSDL2JAVA_ROOT_VALUE_PACKAGE" v="cl.ares.bice.ws.enviosms.ws.types"/>
+         </hash>
+      </hash>
+      <value n="PROXY_ASYNC_METHODS" v="FOR_NONE"/>
+      <list n="PROXY_CLIENTS">
+         <url path="SmsBalanceadoPortClient.java"/>
+      </list>
+      <value n="PROXY_MAPPING_URL"/>
+      <url n="PROXY_ORIGINAL_WSDL_URL" path="SmsBalanceadoService.wsdl"/>
+      <hash n="PROXY_PORTS">
+         <hash n="SmsBalanceadoPort">
+            <value n="ACCESSES_DOC_WRAPPPED" v="true"/>
+            <value n="ACCESSES_RPC_ENCODED" v="false"/>
+            <value n="CLASS_NAME" v="cl.ares.bice.ws.enviosms.ws.proxy.SmsBalanceado"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
+            <value n="NAME" v="SmsBalanceadoPort"/>
+            <hash n="OPERATIONS">
+               <hash n="enviarSMS">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="recargaBalanceoSMS">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </hash>
+            <hash n="PROPERTY_GROUPS">
+               <hash n="WS_POLICY">
+                  <value n="addressing"/>
+                  <hash n="GLOBAL_CONFIG_PROPERTIES"/>
+                  <list n="management"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.policy.PolicyClientModel"/>
+                  <value n="mtom"/>
+                  <hash n="POLICY_OVERRIDE_PROPERTIES"/>
+                  <list n="security"/>
+                  <list n="wsconfig"/>
+                  <value n="wsrm"/>
+               </hash>
+            </hash>
+            <url n="PROXY_ORIGINAL_PORT_ENDPOINT" protocol="http" host="edusa" port="8011" path="/PORTAL/SMS/smsBalanceado"/>
+         </hash>
+      </hash>
+      <value n="PROXY_SERVICE_NAME" v="SmsBalanceadoService"/>
+      <value n="PROXY_SERVICE_NAMESPACE" v="http://ws.sms.bice.cl/"/>
+      <url n="PROXY_TARGET_PROJECT" path="../../../../../../../../desafio4-ws.jpr"/>
+      <list n="PROXY_WSDL_IMPORT_LIST">
+         <url path="smsBalanceado_SCHEMA_2FPORTAL_2FSMS_2FXMLSchema_1180819779.xsd"/>
+      </list>
+      <url n="PROXY_WSDL_URL" path="SmsBalanceadoService.wsdl"/>
+      <hash n="REFERENCED_WEBSERVICE">
+         <list n="BD_">
+            <hash>
+               <value n="BOUND_PORT_TYPE" v="{http://ws.sms.bice.cl/}SmsBalanceado"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+               <value n="NAME" v="{http://ws.sms.bice.cl/}SmsBalanceadoPortBinding"/>
+               <list n="OP_BINDINGS">
+                  <hash>
+                     <value n="BOUND_OPERATION" v="cl.ares.bice.ws.enviosms.ws.types.EnviaSmsRespTO.enviarSMS.cl.ares.bice.ws.enviosms.ws.types.EnviaSmsTO"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="cl.ares.bice.ws.enviosms.ws.types.RecargaBalanceoRespTO.recargaBalanceoSMS.cl.ares.bice.ws.enviosms.ws.types.RecargaBalanceoTO"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+            </hash>
+         </list>
+         <list n="BINDING_FILES"/>
+         <value n="GUID" v="738d364b-0155-1000-8009-0a3310364aed"/>
+         <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy$ProxyJavaWebService"/>
+         <list n="PO_">
+            <hash>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+               <value n="NAME" v="SmsBalanceadoPort"/>
+               <value n="PORT_BINDING_NAME" v="{http://ws.sms.bice.cl/}SmsBalanceadoPortBinding"/>
+               <list n="PORT_OPS">
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="cl.ares.bice.ws.enviosms.ws.types.EnviaSmsRespTO.enviarSMS.cl.ares.bice.ws.enviosms.ws.types.EnviaSmsTO"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="cl.ares.bice.ws.enviosms.ws.types.RecargaBalanceoRespTO.recargaBalanceoSMS.cl.ares.bice.ws.enviosms.ws.types.RecargaBalanceoTO"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+               <url n="URL" protocol="http" host="edusa" port="8011" path="/PORTAL/SMS/smsBalanceado"/>
+            </hash>
+         </list>
+         <hash n="PROPERTY_GROUPS">
+            <hash n="WSDL_TO_JAVA_PROPERTIES">
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+               <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="cl.ares.bice.ws.enviosms.ws.proxy"/>
+               <value n="WSDL2JAVA_ROOT_VALUE_PACKAGE" v="cl.ares.bice.ws.enviosms.ws.types"/>
+            </hash>
+         </hash>
+         <list n="PT_">
+            <hash>
+               <value n="AUTO_SERVICE_INTERFACE"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+               <value n="NAME" v="{http://ws.sms.bice.cl/}SmsBalanceado"/>
+               <hash n="PROPERTY_GROUPS"/>
+               <value n="PT_CLASS" v="cl.ares.bice.ws.enviosms.ws.proxy.SmsBalanceadoImpl"/>
+               <value n="PT_SERVICE_INTERFACE" v="cl.ares.bice.ws.enviosms.ws.proxy.SmsBalanceado"/>
+               <value n="PT_TOP_DOWN_GENERATED_SEI_NAME" v="cl.ares.bice.ws.enviosms.ws.proxy.SmsBalanceado"/>
+            </hash>
+         </list>
+         <url n="TARGET_PROJECT" path="../../../../../../../../desafio4-ws.jpr"/>
+         <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+         <value n="WS_TARGET_NAMESPACE" v="http://ws.sms.bice.cl/"/>
+         <value n="WS_URI" v="SmsBalanceadoService"/>
+         <url n="WS_WSDL_FILE" path="SmsBalanceadoService.wsdl"/>
+      </hash>
+      <value n="SERVICE_ASYNC" v="false"/>
+   </hash>
+</jdevws:WebServiceProxy>

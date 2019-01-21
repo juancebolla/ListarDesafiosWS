@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://ws.sms.bice.cl/" version="1.0" xmlns:tns="http://ws.sms.bice.cl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="EnviaSmsRespTO" type="tns:enviaSmsRespTO"/>
+  <xs:element name="EnviaSmsTO" type="tns:enviaSmsTO"/>
+  <xs:element name="EstadoResp" type="tns:estadoResp"/>
+  <xs:element name="RecargaBalanceoRespTO" type="tns:recargaBalanceoRespTO"/>
+  <xs:element name="RecargaBalanceoTO" type="tns:recargaBalanceoTO"/>
+  <xs:element name="enviarSMS" type="tns:enviarSMS"/>
+  <xs:element name="enviarSMSResponse" type="tns:enviarSMSResponse"/>
+  <xs:element name="recargaBalanceoSMS" type="tns:recargaBalanceoSMS"/>
+  <xs:element name="recargaBalanceoSMSResponse" type="tns:recargaBalanceoSMSResponse"/>
+  <xs:complexType name="enviarSMS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="request" type="tns:enviaSmsTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enviaSmsTO">
+    <xs:sequence>
+      <xs:element name="canalOrigen" type="xs:string"/>
+      <xs:element name="hostName" type="xs:string"/>
+      <xs:element name="rutCliente" type="xs:string"/>
+      <xs:element name="mensaje" type="xs:string"/>
+      <xs:element name="numeroCelularDestino" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enviarSMSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:enviaSmsRespTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enviaSmsRespTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estadoResp" type="tns:estadoResp"/>
+      <xs:element minOccurs="0" name="codOperAsignado" type="xs:string"/>
+      <xs:element minOccurs="0" name="glsOperAsignado" type="xs:string"/>
+      <xs:element minOccurs="0" name="idMsgSalida" type="xs:string"/>
+      <xs:element minOccurs="0" name="fechaRegistro" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estadoResp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codEstado" type="xs:string"/>
+      <xs:element minOccurs="0" name="glsEstado" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="recargaBalanceoSMS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="request" type="tns:recargaBalanceoTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="recargaBalanceoTO">
+    <xs:sequence>
+      <xs:element name="canalOrigen" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="recargaBalanceoSMSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:recargaBalanceoRespTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="recargaBalanceoRespTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estadoResp" type="tns:estadoResp"/>
+      <xs:element name="fechaUltimaModif" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="porcentDistrib" nillable="true" type="tns:operadoresCursorRespTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="operadoresCursorRespTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fec_ingreso" type="xs:string"/>
+      <xs:element minOccurs="0" name="fec_modif" type="xs:string"/>
+      <xs:element minOccurs="0" name="id_servicio" type="xs:string"/>
+      <xs:element minOccurs="0" name="nom_servicio" type="xs:string"/>
+      <xs:element minOccurs="0" name="porcen_carga" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle-webservice-clients xmlns:ns0="http://java.sun.com/xml/ns/javaee">
+   <webservice-client>
+      <service-qname namespaceURI="http://ws.sms.bice.cl/" localpart="SmsBalanceadoService"/>
+      <port-info>
+         <wsdl-port namespaceURI="http://ws.sms.bice.cl/" localpart="SmsBalanceadoPort"/>
+         <runtime/>
+         <operations>
+            <operation name="enviarSMS"/>
+            <operation name="recargaBalanceoSMS"/>
+         </operations>
+      </port-info>
+   </webservice-client>
+</oracle-webservice-clients>
