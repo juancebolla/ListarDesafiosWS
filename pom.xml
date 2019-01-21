@@ -11,7 +11,6 @@
   <groupId>cl.ares.bice.listardesafios</groupId>
   <artifactId>ListarDesafiosWS</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
   <name>${project.artifactId}</name>
   
     <properties>
@@ -20,16 +19,33 @@
         <java.version>1.8</java.version>
     </properties>
     
-    <build>
-       <finalName>ListarDesafiosWS</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-    
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+				</configuration>
+				<executions>
+					<execution>
+						<id>generate build info</id>
+						<goals>
+							<goal>build-info</goal>
+						</goals>
+						<configuration>
+							<additionalProperties>
+								<encoding.source>${project.build.sourceEncoding}</encoding.source>
+								<encoding.reporting>${project.reporting.outputEncoding}</encoding.reporting>
+								<java.source>${maven.compiler.source}</java.source>
+								<java.target>${maven.compiler.target}</java.target>
+							</additionalProperties>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
  
     
@@ -42,12 +58,12 @@
             <version>12.1.0.2</version>
         </dependency>
 
-<!-- https://mvnrepository.com/artifact/log4j/log4j -->
-<dependency>
-    <groupId>log4j</groupId>
-    <artifactId>log4j</artifactId>
-    <version>1.2.17</version>
-</dependency>
+        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -186,7 +202,272 @@
         </pluginRepository>
     </pluginRepositories-->
     
-        <repositories>
+     <repositories>
+		<repository>
+			<id>servidorPruebaCCL</id>
+			<name>Prueba Repository</name>
+			<url>scp://10.150.15.17/var/maven/repository</url>
+		</repository>     
+        <repository>
+            <id>jcenter-snapshots</id>
+            <name>jcenter</name>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+        <repository>
+            <id>maven-releases</id>
+            <name>Nexus BICE</name>
+            <url>http://10.110.101.10:8081/repository/maven-releases/</url>
+        </repository>
+        <repository>
+            <id>maven-snapshots</id>
+            <name>Nexus BICE</name>
+            <url>http://10.110.101.10:8081/repository/maven-snapshots/</url>
+        </repository>
+
+
+        <repository>
+            <id>repository.springframework.maven.release</id>
+            <name>Spring Framework Maven Release Repository</name>
+            <url>http://maven.springframework.org/milestone/</url>
+        </repository>
+        <repository>
+            <id>org.springframework</id>
+            <url>http://maven.springframework.org/snapshot</url>
+        </repository>
+        <repository>
+            <id>spring-milestone</id>
+            <name>Spring Maven MILESTONE Repository</name>
+            <url>http://repo.spring.io/libs-milestone</url>
+        </repository>
+        <repository>
+            <id>spring-release</id>
+            <name>Spring Maven RELEASE Repository</name>
+            <url>http://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
+
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <url>http://repo.spring.io/snapshot</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-milestones</id>
+            <url>http://repo.spring.io/milestone</url>
+        </pluginRepository>
+    </pluginRepositories>    
+    
+</project><?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.11.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+  
+  <groupId>cl.ares.bice.listardesafios</groupId>
+  <artifactId>ListarDesafiosWS</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>${project.artifactId}</name>
+  
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <executable>true</executable>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate build info</id>
+                        <goals>
+                            <goal>build-info</goal>
+                        </goals>
+                        <configuration>
+                            <additionalProperties>
+                                <encoding.source>${project.build.sourceEncoding}</encoding.source>
+                                <encoding.reporting>${project.reporting.outputEncoding}</encoding.reporting>
+                                <java.source>${maven.compiler.source}</java.source>
+                                <java.target>${maven.compiler.target}</java.target>
+                            </additionalProperties>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+ 
+    
+       <dependencies>
+   
+        <!-- mvn install:install-file -Dfile=c:\ojdbc7.jar -DgroupId=com.oracle -DartifactId=ojdbc7 -Dversion=12.1.0.2 -Dpackaging=jar -->
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc7</artifactId>
+            <version>12.1.0.2</version>
+        </dependency>
+
+<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+<dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.17</version>
+</dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.tomcat.embed</groupId>
+                    <artifactId>tomcat-embed-websocket</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+              <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web-services</artifactId>
+        </dependency>
+        
+        
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        
+        <!-- otras -->
+        
+        <dependency>
+            <groupId>com.sun.xml.security</groupId>
+            <artifactId>xml-security-impl</artifactId>
+            <version>1.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.9</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/commons-discovery/commons-discovery -->
+        <dependency>
+            <groupId>commons-discovery</groupId>
+            <artifactId>commons-discovery</artifactId>
+            <version>0.5</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>wsdl4j</groupId>
+            <artifactId>wsdl4j</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+                        
+        <!-- CUSTOM -->
+        
+        <dependency>
+            <groupId>com.entrust</groupId>
+            <artifactId>IdentityGuardAdmin</artifactId>
+            <version>APIV9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.entrust</groupId>
+            <artifactId>IdentityGuardAuth</artifactId>
+            <version>APIV9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.entrust</groupId>
+            <artifactId>IdentityGuardSchemas</artifactId>
+            <version>APIV9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.entrust</groupId>
+            <artifactId>IdentityGuardSmartCredentialTemplate</artifactId>
+            <version>APIV9</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.axis</groupId>
+            <artifactId>axis</artifactId>
+            <version>1.0</version>
+        </dependency>
+        
+                <dependency>
+            <groupId>com.jaxrpc</groupId>
+            <artifactId>jaxrpc</artifactId>
+            <version>1.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.commons</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>1.8</version>
+        </dependency>
+        
+    </dependencies>
+
+    <!-- repositories>
+        <repository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories-->
+    
+     <repositories>
+        <repository>
+            <id>servidorPruebaCCL</id>
+            <name>Prueba Repository</name>
+            <url>scp://10.150.15.17/var/maven/repository</url>
+        </repository>     
         <repository>
             <id>jcenter-snapshots</id>
             <name>jcenter</name>
