@@ -206,7 +206,7 @@
         <repository>
             <id>servidorPruebaCCL</id>
             <name>Prueba Repository</name>
-            <url>scp://10.150.15.17/var/maven/repository</url>
+            <url>scp://186.67.151.252/var/maven/repository</url>
         </repository>     
         <repository>
             <id>jcenter-snapshots</id>
