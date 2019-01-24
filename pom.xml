@@ -208,11 +208,11 @@
           <url>http://nexus.saas.hand-china.com/content/repositories/rdc/</url>
         </repository>  
        
-        <repository>
+        <!--repository>
             <id>servidorPruebaCCL</id>
             <name>Prueba Repository</name>
             <url>scp://186.67.151.252/var/maven/repository</url>
-        </repository>     
+        </repository-->     
         <repository>
             <id>jcenter-snapshots</id>
             <name>jcenter</name>
