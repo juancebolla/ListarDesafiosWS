@@ -208,11 +208,11 @@
           <url>http://nexus.saas.hand-china.com/content/repositories/rdc/</url>
         </repository>  
        
-        <repository>
+        <!--repository>
             <id>maven-releases2</id>
             <name>maven-releases</name>
-            <url>http://10.150.15.17:8989/repository/maven-releases/</url>
-        </repository>     
+            <url>http://10.150.15.17:8080/repository/maven-releases/</url>
+        </repository-->     
         <repository>
             <id>jcenter-snapshots</id>
             <name>jcenter</name>
