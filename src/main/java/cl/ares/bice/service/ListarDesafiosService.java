@@ -19,9 +19,6 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
 
-import javax.faces.context.FacesContext;
-import javax.servlet.ServletContext;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
@@ -29,7 +26,7 @@ import javax.naming.InitialContext;
 public class ListarDesafiosService {
 	
 	public ListarDesafiosResponse listarDesafios(ListarDesafios parameters){
-		System.out.println("LISTAR DESAFIOS POST PRUEBA 05032019");
+		System.out.println("LISTAR DESAFIOS POST PRUEBA 05032019b");
 		//String fileName = System.getProperty("jboss.server.config.dir");
 		//System.out.println("fileName:"+fileName);
 		System.out.println("entrada.usuario:"+parameters.getUsuarioId());
@@ -46,10 +43,6 @@ public class ListarDesafiosService {
         Properties prop = new Properties();
         //Carga SMS PROPERTIES
         try {
-			FacesContext context = FacesContext.getCurrentInstance();
-			ServletContext servletContext = (ServletContext) context.getExternalContext().getContext();
-			String pathReal = servletContext.getRealPath("/");
-			System.out.println("pathReal:"+pathReal);
             env = (Context)new InitialContext().lookup("java:comp/env");
             file = (String)env.lookup("TipoCliente.props");
             input = new FileInputStream(file);
